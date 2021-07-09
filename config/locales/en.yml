@@ -1,0 +1,99 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+# English Language
+
+en:
+  contact:
+    created: "Contact was successfully created"
+    not_created: "Something went wrong"
+  user_mailer:
+    notify_on_contact_creation:
+      salutation: "Hi"
+      body:
+        line1: "Contact is created. Below are the contact details,"
+        line2: "First Name: "
+        line3: "Last Name: "
+        line4: "Email: "
+        line5: "Phone Number: "
+  contact_new:
+    new:
+      title:
+        text: "Send Us A Message"
+        name_text: "Tell us your name"
+        first_name_validate: "Type first name"
+        first_name_placeholder: "First name"
+        last_name_validate: "Type last name"
+        last_name_placeholder: "Last name"
+      email:
+        text: "Enter your email"
+        validate: "Valid email is required"
+        placeholder: "Eg"
+      phone_number:
+        text: "Enter phone number"
+        placeholder: "Eg"
+      language:
+        text: "Choose language"
+        english_text: "English"
+        spanish_text: "Spanish"
+      message:
+        text: "Message"
+        validate: "Message is required"
+        placeholder: "Write us a message"
+      button: "Send Message"
+      header1: "Address"
+      header2: "Lets Talk"
+      header3: "General Support"
+  activerecord:
+    errors:
+      format: "%{attribute} %{message}"
+      messages:
+        blank: "can't be blank"
+        confirmation: "doesn't match %{attribute}"
+        empty: "can't be empty"
+        present: "must be blank"
+        too_long:
+          one: "is too long (maximum is 1 character)"
+          other: "is too long (maximum is %{count} characters)"
+        too_short:
+          one: "is too short (minimum is 1 character)"
+          other: "is too short (minimum is %{count} characters)"
+      template:
+        body: "There were problems with the following fields:"
+        header:
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+      models:
+        contact:
+          attributes:
+            email:
+              email_format: "Please enter correct format"
+

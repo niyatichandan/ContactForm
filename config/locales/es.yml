@@ -1,0 +1,66 @@
+# Spanish language
+es:
+  contact:
+    created: "El contacto se creó correctamente"
+    not_created: "Algo salió mal"
+  user_mailer:
+    notify_on_contact_creation:
+      salutation: "Hola"
+      body:
+        line1: "Se crea el contacto. A continuación se muestra los detalles del contacto"
+        line2: "Primer nombre:"
+        line3: "Apellido:"
+        line4: "Correo electrónico:"
+        line5: "Número de teléfono:"
+  contact_new:
+    new:
+      title:
+        text: "Envíenos un mensaje"
+        name_text: "Dinos tu nombre"
+        first_name_validate: "Escriba el nombre"
+        first_name_placeholder: "Nombre"
+        last_name_validate: "Escriba apellido"
+        last_name_placeholder: "Apellido"
+      email:
+        text: "Ingrese su correo electrónico"
+        validate: "Se requiere un correo electrónico válido"
+        placeholder: "Por ejemplo"
+      phone_number:
+        text: "Ingresa el número de teléfono"
+        placeholder: "Por ejemplo"
+      language:
+        text: "Elige lengua"
+        english_text: "Inglesa"
+        spanish_text: "Española"
+      message:
+        text: "mensaje"
+        validate: "El mensaje es obligatorio"
+        placeholder: "Escríbanos un mensaje"
+      button: "Enviar mensaje"
+      header1: "Dirección"
+      header2: "Hablemos"
+      header3: "Soporte general"
+  activerecord:
+    errors:
+      format: "%{atribute} %{message}"
+      messages:
+        blank: "no puede estar en blanco"
+        confirmation: "no coincide con% {atributo}"
+        empty: "no puede estar vacío"
+        presence: "debe estar en blanco"
+        too_long:
+          one: "es demasiado largo (el máximo es 1 carácter)"
+          other: "es demasiado largo (el máximo es %{count} caracteres)"
+        too_short:
+          one: "es demasiado corto (el mínimo es 1 carácter)"
+          onther: "es demasiado corto (el mínimo es %{count} caracteres)"
+      template:
+        body: "Hubo problemas con los siguientes campos:"
+        header:
+          one: "1 error prohibió que se guardara este %{model}"
+          other: "%{count} errores impidieron que se guardara este %{model}"
+      models:
+        contact:
+          attributes:
+            email:
+              email_format: "Introduzca el formato correcto"
