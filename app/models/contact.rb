@@ -5,4 +5,13 @@ class Contact < ApplicationRecord
   validates :email, presence: true, format: { with: /\A\S+@\S+\z/, message: :email_format }, uniqueness: true
   validates :message, presence: true
   validates :phone_number, length: { minimum: 10, maximum: 15 }, format: { with: /\A\+?\d+$\z/ }
+
+  after_commit :send_email
+
+  private
+
+  # Send email once contact is created
+  def send_email
+    UserMailer.with(email: 'niyatichandan@gmail.com', contact_info: self).support_email.deliver_later
+  end
 end
