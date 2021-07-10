@@ -48,9 +48,10 @@ en:
     new:
       title:
         text: "Send Us A Message"
-        name_text: "Tell us your name"
+        first_name_text: "Enter your first name"
         first_name_validate: "Type first name"
         first_name_placeholder: "First name"
+        last_name_text: "Enter your last name"
         last_name_validate: "Type last name"
         last_name_placeholder: "Last name"
       email:

@@ -3,111 +3,94 @@
     <title>Contact V17</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"> -->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"> -->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"> -->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"> -->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"> -->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"> -->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="css/util.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
-    <!--===============================================================================================-->
   </head>
   <body>
     <div class="container">
-      <form class="validate-form" action="<%=contacts_path%>" method="post">
-        <div>
-          <ul class="nav nav-tabs" id="languageTab" role="tablist">
-            <b><li class="nav-item" role="presentation" value="en"><%= link_to 'English', root_path(locale: :en), class: "nav-link active", :data => { :'bs-toggle' => 'tab' } %></li></b>
-            <b><li class="nav-item" role="presentation" value="es"><%= link_to 'Spanish', root_path(locale: :es), class: "nav-link", :data => { :'bs-toggle' => 'tab' } %></li></b>
-          </ul>
+      <div class="contact-form flex-col-c-m" style="background-image: url('images/contact_form_bg.jpg');">
+        <%= form_for @contact, as: :contact, url: contacts_path do |f|  %>
+          <% if @contact.errors.any? %>
+            <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                <li class="validation-alert-text"><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        <% end %>
+        <form class="validate-form" action="<%=contacts_path%>" method="post">
+          <span class="form-title"><%= t("contact_new.new.title.text") %></span>
+          <div class="row">
+            <label class="input-label col-md-6" for="locale"><%= t("contact_new.new.language.text") %></label>
+            <ul id="ul_top_headers" class="input1 col-md-6" name="locale">
+              <b><li value="en"><%= link_to 'English', root_path(locale: :en) %></li></b>
+              <b><li value="es"><%= link_to 'Spanish', root_path(locale: :es) %></li></b>
+            </ul>
+          </div>
+          <div class="form-group validate-input row">
+            <label class="input-label col-md-6" for="first-name"><%= t("contact_new.new.title.first_name_text") %> *</label>
+            <div class="col-md-6">
+              <input id="first-name" class="input1 col-md-12" type="text" name="first_name" placeholder="<%= t("contact_new.new.title.first_name_placeholder") %>">
+              <span class="validation-message validation-alert-text hide col-md-12 text-align-left"><%= t("contact_new.new.title.first_name_validate") %></span>
+            </div>
+          </div>
+          <div class="form-group validate-input row">
+            <label class="input-label col-md-6" for="last-name"><%= t("contact_new.new.title.last_name_text") %> *</label>
+            <div class="col-md-6">
+              <input id="last_name" class="input1 col-md-12" type="text" name="last_name" placeholder="<%= t("contact_new.new.title.last_name_placeholder") %>">
+              <span class="validation-message validation-alert-text hide col-md-12 text-align-left"><%= t("contact_new.new.title.last_name_validate") %></span>
+            </div>
+          </div>
+          <div class="form-group validate-input row">
+            <label class="input-label col-md-6" for="exampleInputEmail1"><%= t("contact_new.new.email.text") %> *</label>
+            <div class="col-md-6">
+              <input id="email" class="input1 col-md-12" type="text" name="email" placeholder="<%= t("contact_new.new.email.placeholder") %>. example@gmail.com">
+              <span class="validation-message validation-alert-text hide col-md-12 text-align-left"><%= t("contact_new.new.email.validate") %> : example@gmail.com</span>
+            </div>
+          </div>
+          <div class="form-group validate-input row">
+            <label class="input-label col-md-6" for="phone"><%= t("contact_new.new.phone_number.text") %></label>
+            <div class="col-md-6">
+              <input id="phone" class="input1 col-md-12" type="text" name="phone_number" placeholder="<%= t("contact_new.new.phone_number.placeholder") %>. +1 800 000000">
+            </div>
+          </div>
+          <div class="form-group validate-input row">
+            <label class="input-label col-md-6" for="message"><%= t("contact_new.new.message.text") %>  *</label>
+            <div class="col-md-6">
+              <textarea id="message" class="input1 col-md-12" name="message" placeholder="<%= t("contact_new.new.message.placeholder") %>"></textarea>
+              <span class="validation-message validation-alert-text hide col-md-12 text-align-left"><%= t("contact_new.new.message.validate") %></span
+              >
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary"> <%= t("contact_new.new.button") %></button>
+        </form>
+        <hr class="contact-form-hr" />
+        <div class="row p-20">
+          <div class="col-md-4">
+            <span class="contact-info-more"><i class="fa fa-map-marker too-icon"></i>  <%= t("contact_new.new.header1") %></span><br/>
+            <span class="contact-info-more">Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US</span>
+          </div>
+          <div class="col-md-4">
+            <span class="contact-info-more"><i class="fa fa-phone too-icon"></i>  <%= t("contact_new.new.header2") %></span><br/>
+            <span class="contact-info-more">+1 800 1236879</span>
+          </div>
+          <div class="col-md-4">
+            <span class="contact-info-more"><i class="fa fa-envelope-o too-icon"></i>  <%= t("contact_new.new.header3") %></span><br/>
+            <span class="contact-info-more">contact@example.com</span>
+          </div>
         </div>
-        <label for="first-name"><%= t("contact_new.new.title.name_text") %> *</label>
-        <div class="form-group validate-input" data-validate="<%= t("contact_new.new.title.first_name_validate") %>">
-          <input id="first-name" type="text" name="first_name" placeholder="<%= t("contact_new.new.title.first_name_placeholder") %>">
-        </div>
-        <div class="form-group validate-input" data-validate="<%= t("contact_new.new.title.last_name_validate") %>">
-          <input id="last_name" type="text" name="last_name" placeholder="<%= t("contact_new.new.title.last_name_placeholder") %>">
-        </div>
-        <div class="form-group validate-input"  data-validate = "<%= t("contact_new.new.email.validate") %> : ex@xyz.com">
-          <label for="exampleInputEmail1"><%= t("contact_new.new.email.text") %> *</label>
-          <input id="email" type="text" name="email" placeholder="<%= t("contact_new.new.email.placeholder") %>. example@gmail.com">
-        </div>
-        <div class="form-group validate-input">
-          <label for="phone"><%= t("contact_new.new.phone_number.text") %></label>
-          <input id="phone" type="text" name="phone_number" placeholder="<%= t("contact_new.new.phone_number.placeholder") %>. +1 800 000000">
-        </div>
-        <div class="form-group validate-input" data-validate = "<%= t("contact_new.new.message.validate") %>">
-          <label for="message"><%= t("contact_new.new.message.text") %>  *</label>
-          <textarea id="message" name="message" placeholder="<%= t("contact_new.new.message.placeholder") %>"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary"> <%= t("contact_new.new.button") %></button>
-      </form>
+      </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <div id="dropDownSelect1"></div>
-
-    <!--===============================================================================================-->
+    <!-- JQuery -->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script>
-      $(".selection-2").select2({
-          minimumResultsForSearch: 20,
-          dropdownParent: $('#dropDownSelect1')
-      });
-    </script>
-    <!--===============================================================================================-->
-    <script src="vendor/daterangepicker/moment.min.js"></script>
-    <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
+    <!-- Main JS -->
     <script src="js/main.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-23581568-13');
-    </script>
   </body>
 </html>

@@ -16,9 +16,10 @@ es:
     new:
       title:
         text: "Envíenos un mensaje"
-        name_text: "Dinos tu nombre"
+        first_name_text: "Ponga su primer nombre"
         first_name_validate: "Escriba el nombre"
         first_name_placeholder: "Nombre"
+        last_name_text: "Ingrese su apellido"
         last_name_validate: "Escriba apellido"
         last_name_placeholder: "Apellido"
       email:
