@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  #  Create new contact
+  # Creates new contact
   def create
     @contact = Contact.new(contact_params.merge(locale: I18n.locale))
     respond_to do |format|
@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
 
   private
 
-  # Only allow a list of trusted parameters through.
+  # Permitted attributes
   def contact_params
     params.permit('first_name', 'last_name', 'email', 'phone_number', 'message', 'locale')
   end

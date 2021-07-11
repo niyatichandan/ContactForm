@@ -7,10 +7,10 @@
     <h1><%= t("user_mailer.notify_on_contact_creation.salutation") %> <%= @email %></h1>
     <p>
       <%= t("user_mailer.notify_on_contact_creation.body.line1") %><br /><br />
-      <%= t("user_mailer.notify_on_contact_creation.body.line2") %> <%= @contact_info.first_name %><br />
-      <%= t("user_mailer.notify_on_contact_creation.body.line3") %> <%= @contact_info.last_name %><br />
-      <%= t("user_mailer.notify_on_contact_creation.body.line4") %> <%= @contact_info.email %><br />
-      <%= t("user_mailer.notify_on_contact_creation.body.line5") %> <%= @contact_info.phone_number %><br />
+      <%= t("user_mailer.notify_on_contact_creation.body.line2") %> <%= @contact_info[:first_name] %><br />
+      <%= t("user_mailer.notify_on_contact_creation.body.line3") %> <%= @contact_info[:last_name] %><br />
+      <%= t("user_mailer.notify_on_contact_creation.body.line4") %> <%= @contact_info[:email] %><br />
+      <%= t("user_mailer.notify_on_contact_creation.body.line5") %> <%= @contact_info[:phone_number] %><br />
     </p>
   </body>
 </html>

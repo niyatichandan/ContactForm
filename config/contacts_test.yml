@@ -1,0 +1,16 @@
+-
+  id: 1
+  first_name: 'Mary'
+  last_name: 'Joans'
+  email : 'mary.joans1@example.com'
+  phone_number: "7894561230"
+  message: "Hello Mary Joans"
+  locale: "en"
+-
+  id: 2
+  first_name: 'Robert'
+  last_name: 'James'
+  email: 'robert.james1@example.com'
+  phone_number: "3216547890"
+  message: "Hello Robert Joans"
+  locale: "es"

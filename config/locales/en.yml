@@ -39,7 +39,7 @@ en:
     notify_on_contact_creation:
       salutation: "Hi"
       body:
-        line1: "Contact is created. Below are the contact details,"
+        line1: "Your contact has been saved successfully. Please find the contact details below,"
         line2: "First Name: "
         line3: "Last Name: "
         line4: "Email: "

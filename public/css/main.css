@@ -1,6 +1,4 @@
-
-
-/* Common CSS */
+/* START:  Common CSS */
 body{
 	font-size: 16px;
 	font-family: monospace;
@@ -25,8 +23,9 @@ body{
 .text-align-left{
 	text-align: left;
 }
+/* END: Common CSS */
 
-/* Form CSS */
+/* START: Form CSS */
 .validation-alert-text{
 	color: #ff4a4a;
 	font-size: 12px;
@@ -57,8 +56,9 @@ body{
   text-align: center;
   padding-bottom: 40px;
 }
+/* END: Form CSS */
 
-/* Contact Form */
+/* START: Contact Form */
 .contact-form {
   width: 80%;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@ body{
 	color: #FFFFFF;
 }
 
-
 hr.contact-form-hr {
   border: 0.5px solid #FFFFFF;
 }
+/* END: Contact Form */
