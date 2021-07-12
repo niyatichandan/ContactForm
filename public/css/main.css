@@ -23,6 +23,11 @@ body{
 .text-align-left{
 	text-align: left;
 }
+
+.active{
+  color: #007bff !important;
+  text-decoration: underline;
+}
 /* END: Common CSS */
 
 /* START: Form CSS */
@@ -35,6 +40,10 @@ body{
   display: inline;
   padding-right: 5px;
   text-align: left;
+}
+
+#ul_top_headers li a{
+  color: #FFFFFF;
 }
 
 .input-label{

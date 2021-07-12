@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Contact V17</title>
+    <title>Contact Us</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -29,8 +29,8 @@
           <div class="row">
             <label class="input-label col-md-6" for="locale"><%= t("contact_new.new.language.text") %></label>
             <ul id="ul_top_headers" class="input1 col-md-6" name="locale">
-              <b><li value="en"><%= link_to 'English', root_path(locale: :en) %></li></b>
-              <b><li value="es"><%= link_to 'Spanish', root_path(locale: :es) %></li></b>
+              <b><li value="en" ><%= link_to 'English', root_path(locale: :en), class: ( params[:locale].nil? || params[:locale] == "en" ) ? 'active' : '' %></li></b>
+              <b><li value="es" ><%= link_to 'Spanish', root_path(locale: :es), class: params[:locale] == "es" ? 'active' : '' %></li></b>
             </ul>
           </div>
           <div class="form-group validate-input row">
@@ -57,7 +57,7 @@
           <div class="form-group validate-input row">
             <label class="input-label col-md-6" for="phone"><%= t("contact_new.new.phone_number.text") %></label>
             <div class="col-md-6">
-              <input id="phone" class="input1 col-md-12" type="text" name="phone_number" placeholder="<%= t("contact_new.new.phone_number.placeholder") %>. +1 800 000000">
+              <input id="phone" class="input1 col-md-12" type="text" name="phone_number" placeholder="<%= t("contact_new.new.phone_number.placeholder") %>. +1 610 347524">
             </div>
           </div>
           <div class="form-group validate-input row">
@@ -74,15 +74,15 @@
         <div class="row p-20">
           <div class="col-md-4">
             <span class="contact-info-more"><i class="fa fa-map-marker too-icon"></i>  <%= t("contact_new.new.header1") %></span><br/>
-            <span class="contact-info-more">Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US</span>
+            <span class="contact-info-more">123 Main Street, New York, NY 10030 US</span>
           </div>
           <div class="col-md-4">
             <span class="contact-info-more"><i class="fa fa-phone too-icon"></i>  <%= t("contact_new.new.header2") %></span><br/>
-            <span class="contact-info-more">+1 800 1236879</span>
+            <span class="contact-info-more">+1 610 347524</span>
           </div>
           <div class="col-md-4">
             <span class="contact-info-more"><i class="fa fa-envelope-o too-icon"></i>  <%= t("contact_new.new.header3") %></span><br/>
-            <span class="contact-info-more">contact@example.com</span>
+            <span class="contact-info-more">contact.us@example.com</span>
           </div>
         </div>
       </div>
