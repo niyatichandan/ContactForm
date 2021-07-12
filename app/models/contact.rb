@@ -12,6 +12,6 @@ class Contact < ApplicationRecord
 
   # Once email is created send a mail
   def send_email
-    UserMailer.with(email: 'niyati.general@gmail.com', contact_info: self).support_email.deliver_later
+    UserMailer.with(email: 'testemail@example.com', contact_info: self).support_email.deliver_later
   end
 end
