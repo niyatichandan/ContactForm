@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'contacts#new'
 
   # Contact routes
   get '/contacts/new', to: 'contacts#new'
   post '/contacts', to: 'contacts#create'
+
+  get '*all', to: 'application#index', constraints: lambda { |req|
+    req.path.exclude? 'rails/active_storage'
+  }
 end

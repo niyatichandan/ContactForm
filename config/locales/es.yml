@@ -49,6 +49,7 @@ es:
         confirmation: "no coincide con% {atributo}"
         empty: "no puede estar vacío"
         presence: "debe estar en blanco"
+        taken: "ya se ha tomado"
         too_long:
           one: "es demasiado largo (el máximo es 1 carácter)"
           other: "es demasiado largo (el máximo es %{count} caracteres)"
