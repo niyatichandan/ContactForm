@@ -35,4 +35,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-SimpleCov.coverage_dir 'public/coverage'
+/public/coverage
+/coverage/*

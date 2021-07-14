@@ -1,6 +1,6 @@
 
 require 'test_helper'
-
+SimpleCov.command_name "test:functionals"
 class ContactsControllerTest < ActionDispatch::IntegrationTest
   fixtures :contacts
 

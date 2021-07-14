@@ -1,4 +1,5 @@
 require 'test_helper'
+SimpleCov.command_name 'test:units'
 
 class ContactTest < ActiveSupport::TestCase
   fixtures :contacts
