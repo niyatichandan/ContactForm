@@ -42,6 +42,9 @@ es:
       header2: "Hablemos"
       header3: "Soporte general"
   activerecord:
+    attributes:
+      contact:
+        phone_number: "número de teléfono"
     errors:
       format: "%{atribute} %{message}"
       messages:
@@ -55,7 +58,7 @@ es:
           other: "es demasiado largo (el máximo es %{count} caracteres)"
         too_short:
           one: "es demasiado corto (el mínimo es 1 carácter)"
-          onther: "es demasiado corto (el mínimo es %{count} caracteres)"
+          other: "es demasiado corto (el mínimo es %{count} caracteres)"
       template:
         body: "Hubo problemas con los siguientes campos:"
         header:

@@ -29,8 +29,8 @@
           <div class="row">
             <label class="input-label col-md-6" for="locale"><%= t("contact_new.new.language.text") %></label>
             <ul id="ul_top_headers" class="input1 col-md-6" name="locale">
-              <b><li value="en" ><%= link_to 'English', root_path(locale: :en), class: ( params[:locale].nil? || params[:locale] == "en" ) ? 'active' : '' %></li></b>
-              <b><li value="es" ><%= link_to 'Spanish', root_path(locale: :es), class: params[:locale] == "es" ? 'active' : '' %></li></b>
+              <b><li value="en" ><%= link_to 'English', root_path(locale: :en), class: ( I18n.locale.to_s == "en" ) ? 'active' : '' %></li></b>
+              <b><li value="es" ><%= link_to 'Spanish', root_path(locale: :es), class: I18n.locale.to_s == "es" ? 'active' : '' %></li></b>
             </ul>
           </div>
           <div class="form-group validate-input row">

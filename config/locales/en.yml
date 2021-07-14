@@ -74,6 +74,9 @@ en:
       header2: "Lets Talk"
       header3: "General Support"
   activerecord:
+    attributes:
+      contact:
+        phone_number: "Phone Number"
     errors:
       format: "%{attribute} %{message}"
       messages:

@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   protect_from_forgery
 
 	def new
-    I18n.locale = params[:locale]
+    I18n.locale = params[:locale].nil? ? :en : params[:locale].to_sym
     @contact = Contact.new
   end
 
@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
       if @contact.save
         format.html { redirect_to root_path, notice: I18n.t('contact.created') }
       else
-        format.html { render 'contacts/new' }
+        format.html { render 'contacts/new', locals: {locale: I18n.locale} }
       end
     end
   end
